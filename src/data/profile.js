@@ -10,7 +10,7 @@ export const profile = {
     en: { href: "/cv-juan-macias-en.pdf", fileName: "CV-Juan-Carlos-Macias-EN.pdf" },
   },
   socials: {
-    github: "https://github.com/juanmacia",
+    github: "https://github.com/JuanMacias05",
     linkedin: "https://www.linkedin.com/in/juan-macias-5ba3a124b/",
   },
 }
@@ -35,7 +35,7 @@ export const projectMeta = [
     id: "portfolio",
     tags: ["React", "Vite", "CSS", "EmailJS", "Playwright", "GitHub Actions"],
     demo: "https://mi-app-en-react.vercel.app/",
-    code: "https://github.com/juanmacia/Mi-app-en-react-",
-    tests: "https://github.com/juanmacia/Mi-app-en-react-/tree/main/tests",
+    code: "https://github.com/JuanMacias05/Mi-app-en-react-",
+    tests: "https://github.com/JuanMacias05/Mi-app-en-react-/tree/main/tests",
   },
 ]
