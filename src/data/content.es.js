@@ -2,8 +2,8 @@
 
 const es = {
   meta: {
-    title: "Juan Macias — QA Analyst",
-    description: "QA Analyst especializado en automatización de pruebas, revisión de código y reportes de calidad con Allure y CI.",
+    title: "Juan Macias — QA Automation Engineer",
+    description: "QA Automation Engineer / SDET: automatización E2E con Playwright, controles de calidad en CI/CD y reportes con Allure. También desarrollo en Python (FastAPI) y React (Next.js).",
   },
 
   ui: {
@@ -20,7 +20,7 @@ const es = {
     themeToDark: "Activar modo oscuro",
     menuOpen: "Abrir menú",
     menuClose: "Cerrar menú",
-    langSwitch: "View in English",
+    langSwitch: "EN · View in English",
     newTab: "se abre en una pestaña nueva",
     downloadCv: "Descargar CV",
     contactCta: "Contacto",
@@ -37,7 +37,7 @@ const es = {
     noPublicLinks: "Sin enlaces públicos por ahora",
     pipelineLabel: (n, titles) => `Flujo del pipeline en ${n} pasos: ${titles}.`,
     step: "Paso",
-    contactLead: "Estoy buscando nuevas oportunidades como QA Analyst. Si mi perfil encaja con tu equipo, escríbeme y te respondo pronto.",
+    contactLead: "Estoy buscando nuevas oportunidades como QA Automation Engineer o SDET. Si mi perfil encaja con tu equipo, escríbeme y te respondo pronto.",
     form: {
       name: "Nombre",
       email: "Correo",
@@ -59,116 +59,130 @@ const es = {
     linkedinValue: "Conectemos",
     githubValue: "Mira mi código",
     madeWith: "Hecho con React.",
+    navQuality: "Calidad",
+    dashboard: "Panel de calidad",
   },
 
   hero: {
     availability: "Disponible para nuevas oportunidades",
-    role: "QA Analyst · Test Automation",
-    tagline: "Pruebas automatizadas, reportes claros y despliegues sin sorpresas.",
+    role: "QA Automation Engineer / SDET",
+    tagline: "Pruebas automatizadas, controles de calidad en CI/CD y reportes claros, para desplegar sin sorpresas.",
     studies: "Estudiante de Ingeniería en Desarrollo de Software.",
-    workMode: "Remoto o híbrido",
+    workMode: "Monterrey, México · Remoto o híbrido",
   },
 
   summary: [
-    { label: "Rol actual", value: "QA Analyst en Gencise.ai" },
-    { label: "Enfoque", value: "QA automation, QA manual y apoyo a desarrollo" },
+    { label: "Rol actual", value: "QA Automation Engineer en Gencise.ai" },
+    { label: "Experiencia", value: "Más de 1.5 años en pruebas de software" },
+    { label: "Enfoque", value: "Automatización E2E, CI/CD y desarrollo full-stack" },
     { label: "Formación", value: "Ing. en Desarrollo de Software" },
     { label: "Idiomas", value: "Español nativo · Inglés B1" },
   ],
 
   experience: [
     {
-      role: "QA Analyst",
+      role: "QA Analyst / QA Automation Engineer",
       company: "Gencise.ai",
-      period: "Mayo 2026 – Actualidad",
+      period: "Mayo 2026 – Actualidad · insurtech de EE. UU., remoto",
       stats: [
-        "162 PRs integrados",
-        "107 PRs revisados",
-        "60 casos de prueba en Xray",
-        "6 productos con pruebas automatizadas"
+        "218 PRs integrados en 17 repositorios",
+        "Más de 200 PRs revisados",
+        "6 productos con pruebas automatizadas",
+        "Corrida nocturna 36% más rápida",
       ],
       groups: [
         {
-          title: "QA Automation",
+          title: "Automatización y framework de pruebas",
           items: [
-            "Construí desde cero el reporte centralizado de pruebas automatizadas del equipo, con Allure y publicado en AWS como sitio estático.",
-            "Desarrollé plugins propios para Allure: historial de corridas, vista general por producto, reporte de producción y resultados por prueba con captura y consola.",
-            "Amplié la cobertura de pruebas automatizadas a 6 productos con Playwright y behave, incluidas suites de regresión por producto.",
-            "Llevé las pruebas de humo (smoke) a producción y demo: se ejecutan automáticamente cada vez que una aplicación se despliega.",
-            "Optimicé la corrida nocturna de ~119 a ~76 minutos (≈36% más rápida), manteniéndola dentro de su tiempo límite.",
-            "Hice más confiable el pipeline de CI en Kubernetes: reintentos ante fallas de infraestructura, cuarentena de fallas conocidas y publicación de resultados aunque la ejecución se interrumpa.",
-            "Automaticé la publicación de resultados en Xray y las notificaciones en Slack, que distinguen las fallas nuevas de las repetidas.",
-            "Diseñé la clasificación automática de pruebas a partir de sus etiquetas, que organiza el reporte en 8 suites.",
-            "Definí con el equipo un sistema de estados que distingue las fallas reales de la aplicación de las fallas ya conocidas."
-          ]
+            "Construí y amplié la automatización E2E de 6 productos (Bar & Tavern, Transportation, Property Insurance, Multi-Rater, Broker AI y Admin) con Python, Playwright y Behave (BDD/Gherkin): smoke, regresión, cálculo de primas, filtros, ordenamiento, paginación y validación de correos.",
+            "Participé en el framework de nueva generación del equipo (pytest + Playwright): un registro de casos en YAML con validación, pruebas smoke seguras para producción (verificaciones previas, bloqueo de red y botón de paro) y casos smoke y sanity aprobados para staging y producción.",
+            "Organicé las pruebas en 8 suites por etiquetas y agregué un estado de fallas conocidas (cuarentena) para que la corrida nocturna reporte solo errores reales de la aplicación.",
+          ],
         },
         {
-          title: "QA manual y revisión de código",
+          title: "CI/CD e infraestructura",
           items: [
-            "Revisé 107 pull requests del equipo, incluidos los de nuevos integrantes, detectando pruebas que daban falsos positivos antes de llegar a producción.",
-            "Diseñé 60 casos de prueba en Xray, reporté bugs y verifiqué tickets en UAT."
-          ]
+            "Integré las pruebas en GitHub Actions, ejecutándose en pods de Kubernetes (Helm): corridas nocturnas, regresiones por producto y pruebas smoke en producción y demo que se lanzan solas después de cada despliegue.",
+            "Reduje el tiempo de la corrida nocturna de unos 119 a unos 76 minutos (36% más rápida) repartiendo las suites pesadas entre semana y corriendo la regresión completa los domingos.",
+            "Hice el pipeline más confiable: un reintento automático cuando la falla es de infraestructura y no de la app, marcar en rojo los pods caídos o las corridas sin escenarios, y publicar los resultados aunque la corrida se interrumpa.",
+          ],
         },
         {
-          title: "Desarrollo",
+          title: "Reportes y gestión de pruebas",
           items: [
-            "Corregí bugs en el frontend y el backend de las aplicaciones del equipo, como el ordenamiento de tablas con valores vacíos.",
-            "Implementé reintentos automáticos y alertas de Slack en un flujo crítico, con cambios coordinados en 5 repositorios.",
-            "Desarrollé un dashboard de adopción y analítica de uso, tanto en el backend como en el frontend."
-          ]
-        }
-      ]
-    }
+            "Construí desde cero el reporte central de pruebas del equipo con Allure en AWS S3, con plugins propios: historial de corridas, resumen por producto, reporte de producción con datos ocultos y resultado de cada prueba con capturas de pantalla.",
+            "Automaticé la publicación de resultados en Jira Xray (más de 60 casos de prueba con trazabilidad) y alertas en Slack que distinguen las fallas nuevas de las recurrentes, con enlace directo a la corrida que falló.",
+            "Creé un flujo de verificación UAT que revisa un ticket de Jira en Staging y le adjunta la evidencia.",
+          ],
+        },
+        {
+          title: "Desarrollo full-stack",
+          items: [
+            "Entregué funcionalidades y correcciones en el producto principal: Next.js 16, React, TypeScript y Tailwind en el frontend; Python, FastAPI y PostgreSQL (migraciones con Alembic) en el backend.",
+            "Construí de punta a punta el módulo de Problem Reports: búsqueda global, filtros, campos de estado y responsable, una página para que cada usuario vea sus propios reportes y sincronización bidireccional con Jira mediante una tarea programada.",
+            "Desarrollé un dashboard de analítica y adopción (endpoint de API más interfaz) con acceso solo para administradores.",
+            "Agregué reintentos y alertas en Slack para los envíos fallidos del procesamiento de documentos (Vision), y corregí errores de datos en la extracción del número DOT y en la clasificación de tipos de archivo.",
+            "Creé una librería reutilizable de plantillas de correo HTML (paquete de Python) y migré a ella los correos de 6 servicios.",
+          ],
+        },
+      ],
+    },
+    {
+      role: "QA Intern",
+      company: "MBQ Group",
+      period: "Junio 2025 – Abril 2026",
+      groups: [
+        {
+          title: "Pruebas manuales",
+          items: [
+            "Ejecuté pruebas manuales funcionales y de regresión siguiendo los procedimientos internos de QA, y documenté resultados y evidencias.",
+            "Reporté y di seguimiento a defectos con el equipo de desarrollo, y mantuve organizada la documentación del proyecto.",
+          ],
+        },
+      ],
+    },
+    {
+      role: "Coordinador de Operaciones",
+      company: "Syl 13 Seguridad Privada",
+      period: "Enero 2025 – Enero 2026",
+      groups: [
+        {
+          title: "Operaciones y equipo",
+          items: [
+            "Coordiné la cobertura de personal en las zonas asignadas, además de la nómina y la logística operativa.",
+            "Dirigí el reclutamiento y la capacitación del personal nuevo.",
+          ],
+        },
+      ],
+    },
   ],
 
   about: [
-    "Soy QA Analyst enfocado en automatización de pruebas. Mi trabajo es encontrar lo que se escapa: pruebas que pasan cuando no deberían, reportes que no dicen dónde falló algo y evidencia que se pierde en el camino.",
-    "Combino automatización con QA manual: diseño casos de prueba, reporto bugs y verifico en UAT. Además resuelvo tickets de desarrollo, así que entiendo cómo se construye lo que reviso.",
+    "Soy QA Automation Engineer con más de 1.5 años en pruebas de software, manuales y automatizadas. Mi trabajo es encontrar lo que se escapa: pruebas que pasan cuando no deberían, reportes que no dicen dónde falló algo y evidencia que se pierde en el camino.",
+    "Además de pruebas, escribo código de producción: backends en Python (FastAPI) y frontends en TypeScript y React (Next.js). Entender cómo se construye lo que pruebo me ayuda a diseñar mejores casos y a corregir lo que encuentro. Uso agentes de IA para acelerar la creación y el análisis de pruebas.",
   ],
 
   skillGroups: [
     {
-      title: "QA",
-      skills: [
-        "Playwright",
-        "behave (BDD / Gherkin)",
-        "Allure",
-        "Xray (Jira)",
-        "Pruebas manuales",
-        "Smoke / Sanity / Regression",
-        "Code review"
-      ]
+      title: "Automatización de pruebas",
+      skills: ["Playwright", "pytest", "Behave (BDD / Gherkin)", "Allure", "Pruebas de API (requests, Postman)"],
     },
     {
-      title: "CI / Infraestructura",
-      skills: [
-        "GitHub Actions",
-        "Docker",
-        "Kubernetes",
-        "Helm",
-        "AWS S3",
-        "Linux"
-      ]
+      title: "Gestión de pruebas",
+      skills: ["Jira", "Xray", "Diseño de casos de prueba", "Smoke / Sanity / Regresión / UAT", "Code review", "Análisis de pruebas flaky"],
+    },
+    {
+      title: "CI/CD y nube",
+      skills: ["GitHub Actions", "Docker", "Kubernetes", "Helm", "AWS S3", "Terraform (básico)"],
     },
     {
       title: "Desarrollo",
-      skills: [
-        "Python",
-        "JavaScript",
-        "SQL",
-        "React",
-        "REST APIs",
-        "HTML / CSS",
-        "Git"
-      ]
+      skills: ["Python", "TypeScript", "JavaScript", "SQL", "Bash", "Next.js", "React", "FastAPI", "PostgreSQL", "Tailwind CSS"],
     },
     {
       title: "Idiomas",
-      skills: [
-        "Español — Nativo",
-        "Inglés — B1, en progreso hacia B2"
-      ]
-    }
+      skills: ["Español — Nativo", "Inglés — B1, uso diario por escrito"],
+    },
   ],
 
   // Por id (ver projectMeta en profile.js). result puede ser texto o lista.
@@ -260,11 +274,15 @@ const es = {
           "Accesibilidad: HTML semántico, foco visible, etiquetas en el formulario y respeto a la preferencia de reducir movimiento.",
           "Formulario de contacto con EmailJS, validación por campo y mensajes de estado.",
           "Pruebas end-to-end con Playwright en escritorio y móvil (formulario, descarga del CV, idiomas, tema y navegación), ejecutadas en GitHub Actions en cada pull request.",
+          "Auditoría automática de accesibilidad (WCAG 2.1 AA) con axe en cada idioma, tema y en móvil.",
+          "Lighthouse CI con mínimos de accesibilidad, buenas prácticas y SEO: si bajan, el pipeline falla.",
+          "Un panel de calidad público que muestra los resultados reales de cada corrida del CI, generado por un script con sus propias pruebas unitarias.",
         ],
       },
       result: [
         "Un sitio ligero, publicado en Vercel, que se ve bien en móvil, tablet y escritorio.",
         "Todo el contenido vive en archivos de datos: actualizarlo no requiere tocar los componentes.",
+        "La calidad es visible: cualquiera puede abrir el panel y ver qué pruebas corrieron, cuánto tardaron y si algo falló.",
       ],
     },
   },
@@ -279,6 +297,81 @@ const es = {
     // Si tomas un curso o te preparas para una certificación de inglés, agrégalo así:
     // { title: "Inglés — preparación para B2", school: "[Institución]", period: "En curso", note: null },
   ],
+
+  // Panel de calidad (/calidad).
+  quality: {
+    meta: {
+      title: "Panel de calidad — Juan Macias",
+      description: "Resultados reales del pipeline de CI del portafolio de Juan Macias: pruebas E2E, accesibilidad, Lighthouse e historial de corridas.",
+    },
+    eyebrow: "Calidad en vivo",
+    title: "Panel de calidad",
+    lead: "Resultados reales del pipeline de este portafolio. Cada push a main corre lint, pruebas unitarias, pruebas E2E en escritorio y móvil, auditoría de accesibilidad con axe y Lighthouse. Aquí está la última corrida, sin editar.",
+    back: "Volver al portafolio",
+    status: { ok: "Pipeline en verde", fallo: "Pipeline con fallos", "sin-datos": "Sin resultados de pruebas" },
+    localRun: "Corrida local (fuera de GitHub Actions)",
+    run: "Corrida",
+    commit: "Commit",
+    branch: "Rama",
+    generated: "Generado",
+    links: { run: "Ver en GitHub Actions", e2e: "Reporte de Playwright", lighthouse: "Reporte de Lighthouse" },
+    kpis: {
+      label: "Resumen de la última corrida",
+      tests: "Pruebas E2E",
+      passedOf: (p, t) => `${p} de ${t} pasaron`,
+      failed: "Fallaron",
+      failedHint: "fallaron también al reintentar",
+      flaky: "Flaky",
+      flakyHint: "pasaron solo al reintentar",
+      duration: "Duración de la suite",
+      durationHint: (n) => `${n} dispositivos en paralelo`,
+    },
+    lighthouse: {
+      title: "Lighthouse",
+      lead: "Mediana de 3 corridas sobre la versión de producción. Si una categoría baja del mínimo, el pipeline falla.",
+      categories: { rendimiento: "Rendimiento", accesibilidad: "Accesibilidad", "buenas-practicas": "Buenas prácticas", seo: "SEO" },
+      min: (n) => `mínimo ${n}`,
+      warnOnly: "solo avisa",
+      below: "debajo del mínimo",
+      empty: "Esta corrida no tiene resultados de Lighthouse.",
+    },
+    pipeline: {
+      title: "Pipeline",
+      lead: "Cuánto tardó cada job de GitHub Actions y cuándo empezó. Las pruebas y Lighthouse corren en paralelo.",
+      total: "Total",
+      steps: (n) => `Ver ${n} pasos`,
+      empty: "La línea de tiempo aparece cuando el panel se genera en GitHub Actions.",
+      startsAt: (s) => `empieza en ${s}`,
+    },
+    tests: {
+      title: "Resultados por prueba",
+      filterLabel: "Filtrar pruebas",
+      filters: { todas: "Todas", fallo: "Fallaron", flaky: "Flaky" },
+      search: "Buscar prueba",
+      searchPlaceholder: "Ej. formulario, móvil, WCAG…",
+      columns: { test: "Prueba", device: "Dispositivo", status: "Estado", duration: "Duración" },
+      projects: { escritorio: "Escritorio", movil: "Móvil" },
+      states: { paso: "Pasó", fallo: "Falló", flaky: "Flaky", omitida: "Omitida" },
+      attempts: (n) => `${n} intentos`,
+      openReport: "Abrir en el reporte",
+      showing: (n, t) => `Mostrando ${n} de ${t} pruebas`,
+      empty: "Ninguna prueba coincide con el filtro.",
+    },
+    history: {
+      title: "Historial",
+      lead: (n) => `Últimas ${n} corridas en main. La altura de cada barra es la duración de la suite E2E.`,
+      chartLabel: "Duración de la suite por corrida",
+      single: "Todavía hay una sola corrida; el historial crece con cada push a main.",
+      tableToggle: "Ver como tabla",
+      columns: { run: "Corrida", date: "Fecha", status: "Estado", tests: "Pruebas", flaky: "Flaky", duration: "Duración", a11y: "Accesib." },
+      states: { ok: "Verde", fallo: "Falló", "sin-datos": "Sin datos" },
+    },
+    loading: "Cargando resultados del CI…",
+    error: "No se pudieron cargar los resultados del CI.",
+    errorHint: "Puede que el pipeline todavía no haya publicado. Las corridas también se pueden ver directo en GitHub Actions.",
+    retry: "Reintentar",
+    actionsLink: "Abrir GitHub Actions",
+  },
 }
 
 export default es

@@ -1,0 +1,505 @@
+{
+  "version": 1,
+  "generado": "2026-11-05T18:30:00.000Z",
+  "estado": "fallo",
+  "run": {
+    "id": 9000000001,
+    "numero": 48,
+    "url": "https://github.com/JuanMacias05/Mi-app-en-react-/actions/runs/9000000001",
+    "rama": "main",
+    "evento": "push",
+    "commit": "a1b2c3d",
+    "commitUrl": "https://github.com/JuanMacias05/Mi-app-en-react-/commit/a1b2c3d",
+    "mensaje": "Fixture de pruebas del panel"
+  },
+  "reportes": {
+    "e2e": "https://juanmacias05.github.io/Mi-app-en-react-/e2e/",
+    "lighthouse": "https://juanmacias05.github.io/Mi-app-en-react-/lighthouse/"
+  },
+  "resumen": {
+    "total": 20,
+    "pasaron": 18,
+    "fallaron": 1,
+    "flaky": 1,
+    "omitidas": 0,
+    "duracionMs": 15296,
+    "inicio": "2026-11-06T01:56:30.223Z"
+  },
+  "proyectos": [
+    "escritorio",
+    "movil"
+  ],
+  "archivos": [
+    {
+      "archivo": "accesibilidad.spec.js",
+      "tests": [
+        {
+          "id": "285dcd9c02fde27b5b4b-70b38b1fd2852ffd15e6",
+          "grupo": "Accesibilidad",
+          "titulo": "sin violaciones WCAG en español, modo dark",
+          "proyecto": "escritorio",
+          "estado": "paso",
+          "duracionMs": 2843,
+          "intentos": 1
+        },
+        {
+          "id": "285dcd9c02fde27b5b4b-c24a092ea74926f32f7a",
+          "grupo": "Accesibilidad",
+          "titulo": "sin violaciones WCAG en español, modo light",
+          "proyecto": "escritorio",
+          "estado": "paso",
+          "duracionMs": 2860,
+          "intentos": 1
+        },
+        {
+          "id": "285dcd9c02fde27b5b4b-84cfad5090e4bcc6e27a",
+          "grupo": "Accesibilidad",
+          "titulo": "los errores del formulario son accesibles",
+          "proyecto": "escritorio",
+          "estado": "paso",
+          "duracionMs": 2803,
+          "intentos": 1
+        },
+        {
+          "id": "285dcd9c02fde27b5b4b-6436965fa2d28094e798",
+          "grupo": "Accesibilidad › con el navegador en inglés",
+          "titulo": "sin violaciones WCAG en inglés",
+          "proyecto": "escritorio",
+          "estado": "paso",
+          "duracionMs": 2851,
+          "intentos": 1
+        },
+        {
+          "id": "285dcd9c02fde27b5b4b-5bbae574a6da3e57daaf",
+          "grupo": "Accesibilidad en móvil @movil",
+          "titulo": "sin violaciones WCAG con el menú abierto",
+          "proyecto": "movil",
+          "estado": "paso",
+          "duracionMs": 3078,
+          "intentos": 1
+        }
+      ]
+    },
+    {
+      "archivo": "contacto.spec.js",
+      "tests": [
+        {
+          "id": "c8e5bbf483784b054bc9-b679dd669f599fd33a85",
+          "grupo": "Formulario de contacto",
+          "titulo": "no envía nada si los campos están vacíos y marca cada error",
+          "proyecto": "escritorio",
+          "estado": "paso",
+          "duracionMs": 1185,
+          "intentos": 1
+        },
+        {
+          "id": "c8e5bbf483784b054bc9-8e4b7f479fc263199148",
+          "grupo": "Formulario de contacto",
+          "titulo": "rechaza un correo con formato inválido",
+          "proyecto": "escritorio",
+          "estado": "paso",
+          "duracionMs": 3219,
+          "intentos": 1
+        },
+        {
+          "id": "c8e5bbf483784b054bc9-35ba7eaff4987b528a65",
+          "grupo": "Formulario de contacto",
+          "titulo": "envía los datos a EmailJS y confirma el envío",
+          "proyecto": "escritorio",
+          "estado": "paso",
+          "duracionMs": 3167,
+          "intentos": 1
+        },
+        {
+          "id": "c8e5bbf483784b054bc9-026158254e1cc395b120",
+          "grupo": "Formulario de contacto",
+          "titulo": "muestra un error si el servicio de correo falla",
+          "proyecto": "escritorio",
+          "estado": "fallo",
+          "duracionMs": 3164,
+          "intentos": 2,
+          "error": "Error: expect(locator).toContainText(expected) failed"
+        }
+      ]
+    },
+    {
+      "archivo": "cv.spec.js",
+      "tests": [
+        {
+          "id": "69b05e03aa87053e7647-bf9df64fc34eab3ea38a",
+          "grupo": "Descarga del CV",
+          "titulo": "descarga el CV en español",
+          "proyecto": "escritorio",
+          "estado": "paso",
+          "duracionMs": 1090,
+          "intentos": 1
+        },
+        {
+          "id": "69b05e03aa87053e7647-25971768857087f61d8b",
+          "grupo": "Descarga del CV",
+          "titulo": "descarga el CV en inglés cuando el sitio está en inglés",
+          "proyecto": "escritorio",
+          "estado": "paso",
+          "duracionMs": 1067,
+          "intentos": 1
+        },
+        {
+          "id": "69b05e03aa87053e7647-234fc581a62fb6a35264",
+          "grupo": "Descarga del CV",
+          "titulo": "los dos PDF existen en el servidor",
+          "proyecto": "escritorio",
+          "estado": "paso",
+          "duracionMs": 82,
+          "intentos": 1
+        }
+      ]
+    },
+    {
+      "archivo": "idioma-tema.spec.js",
+      "tests": [
+        {
+          "id": "3a6d4611ebcc85f2f870-6e0310a836027a063616",
+          "grupo": "Idioma",
+          "titulo": "cambia todo el sitio a inglés y lo recuerda al recargar",
+          "proyecto": "escritorio",
+          "estado": "paso",
+          "duracionMs": 837,
+          "intentos": 1
+        },
+        {
+          "id": "3a6d4611ebcc85f2f870-5f155c237160872ef426",
+          "grupo": "Idioma › con el navegador en inglés",
+          "titulo": "muestra el sitio en inglés desde la primera visita",
+          "proyecto": "escritorio",
+          "estado": "paso",
+          "duracionMs": 852,
+          "intentos": 1
+        },
+        {
+          "id": "3a6d4611ebcc85f2f870-7fff3c62ec6445d498c1",
+          "grupo": "Tema",
+          "titulo": "alterna entre modo oscuro y claro y lo recuerda al recargar",
+          "proyecto": "escritorio",
+          "estado": "paso",
+          "duracionMs": 938,
+          "intentos": 1
+        }
+      ]
+    },
+    {
+      "archivo": "navegacion.spec.js",
+      "tests": [
+        {
+          "id": "743aecf423701b1816c5-a5dd75f8f47bc71ffbef",
+          "grupo": "Navegación",
+          "titulo": "cada enlace del menú lleva a su sección y la marca como activa",
+          "proyecto": "escritorio",
+          "estado": "paso",
+          "duracionMs": 2889,
+          "intentos": 1
+        },
+        {
+          "id": "743aecf423701b1816c5-a2f531e8fef4d3f253a2",
+          "grupo": "Navegación",
+          "titulo": "muestra la información clave en el hero",
+          "proyecto": "escritorio",
+          "estado": "paso",
+          "duracionMs": 711,
+          "intentos": 1
+        },
+        {
+          "id": "743aecf423701b1816c5-23fc382bfed0d5576d80",
+          "grupo": "Móvil @movil",
+          "titulo": "el menú hamburguesa abre, navega y se cierra",
+          "proyecto": "movil",
+          "estado": "flaky",
+          "duracionMs": 2681,
+          "intentos": 2,
+          "error": "Test timeout of 30000ms exceeded."
+        },
+        {
+          "id": "743aecf423701b1816c5-209c059cbd36b37aa584",
+          "grupo": "Móvil @movil",
+          "titulo": "Escape cierra el menú",
+          "proyecto": "movil",
+          "estado": "paso",
+          "duracionMs": 1744,
+          "intentos": 1
+        },
+        {
+          "id": "743aecf423701b1816c5-dd832af506d4f6fc7398",
+          "grupo": "Móvil @movil",
+          "titulo": "no hay desplazamiento horizontal",
+          "proyecto": "movil",
+          "estado": "paso",
+          "duracionMs": 842,
+          "intentos": 1
+        }
+      ]
+    }
+  ],
+  "lighthouse": {
+    "corridas": 3,
+    "categorias": [
+      {
+        "id": "rendimiento",
+        "puntaje": 99,
+        "minimo": 90,
+        "nivel": "warn",
+        "cumple": true
+      },
+      {
+        "id": "accesibilidad",
+        "puntaje": 100,
+        "minimo": 95,
+        "nivel": "error",
+        "cumple": true
+      },
+      {
+        "id": "buenas-practicas",
+        "puntaje": 100,
+        "minimo": 90,
+        "nivel": "error",
+        "cumple": true
+      },
+      {
+        "id": "seo",
+        "puntaje": 100,
+        "minimo": 90,
+        "nivel": "error",
+        "cumple": true
+      }
+    ]
+  },
+  "pipeline": {
+    "duracionS": 141,
+    "jobs": [
+      {
+        "nombre": "Lint, unitarias y E2E",
+        "estado": "fallo",
+        "inicioS": 0,
+        "duracionS": 141,
+        "pasos": [
+          {
+            "nombre": "Instalar dependencias",
+            "estado": "paso",
+            "duracionS": 14
+          },
+          {
+            "nombre": "Lint",
+            "estado": "paso",
+            "duracionS": 4
+          },
+          {
+            "nombre": "Pruebas unitarias",
+            "estado": "paso",
+            "duracionS": 1
+          },
+          {
+            "nombre": "Instalar Chromium",
+            "estado": "paso",
+            "duracionS": 38
+          },
+          {
+            "nombre": "Correr pruebas E2E",
+            "estado": "fallo",
+            "duracionS": 61
+          },
+          {
+            "nombre": "Guardar reporte",
+            "estado": "paso",
+            "duracionS": 3
+          }
+        ]
+      },
+      {
+        "nombre": "Lighthouse",
+        "estado": "paso",
+        "inicioS": 2,
+        "duracionS": 96,
+        "pasos": [
+          {
+            "nombre": "Instalar dependencias",
+            "estado": "paso",
+            "duracionS": 13
+          },
+          {
+            "nombre": "Auditar con Lighthouse",
+            "estado": "paso",
+            "duracionS": 71
+          }
+        ]
+      }
+    ]
+  },
+  "historial": [
+    {
+      "run": 8999999990,
+      "numero": 37,
+      "fecha": "2026-10-20T15:00:00.000Z",
+      "commit": "f000000",
+      "estado": "ok",
+      "total": 15,
+      "pasaron": 15,
+      "fallaron": 0,
+      "flaky": 0,
+      "duracionMs": 11800,
+      "accesibilidad": 100,
+      "rendimiento": 97
+    },
+    {
+      "run": 8999999991,
+      "numero": 38,
+      "fecha": "2026-10-21T22:00:00.000Z",
+      "commit": "f000001",
+      "estado": "ok",
+      "total": 15,
+      "pasaron": 15,
+      "fallaron": 0,
+      "flaky": 0,
+      "duracionMs": 12400,
+      "accesibilidad": 100,
+      "rendimiento": 98
+    },
+    {
+      "run": 8999999992,
+      "numero": 39,
+      "fecha": "2026-10-23T05:00:00.000Z",
+      "commit": "f000002",
+      "estado": "ok",
+      "total": 15,
+      "pasaron": 15,
+      "fallaron": 0,
+      "flaky": 0,
+      "duracionMs": 11200,
+      "accesibilidad": 100,
+      "rendimiento": 99
+    },
+    {
+      "run": 8999999993,
+      "numero": 40,
+      "fecha": "2026-10-24T12:00:00.000Z",
+      "commit": "f000003",
+      "estado": "ok",
+      "total": 15,
+      "pasaron": 15,
+      "fallaron": 0,
+      "flaky": 0,
+      "duracionMs": 13100,
+      "accesibilidad": 100,
+      "rendimiento": 96
+    },
+    {
+      "run": 8999999994,
+      "numero": 41,
+      "fecha": "2026-10-25T19:00:00.000Z",
+      "commit": "f000004",
+      "estado": "fallo",
+      "total": 15,
+      "pasaron": 13,
+      "fallaron": 1,
+      "flaky": 1,
+      "duracionMs": 16800,
+      "accesibilidad": 100,
+      "rendimiento": 98
+    },
+    {
+      "run": 8999999995,
+      "numero": 42,
+      "fecha": "2026-10-27T02:00:00.000Z",
+      "commit": "f000005",
+      "estado": "ok",
+      "total": 15,
+      "pasaron": 15,
+      "fallaron": 0,
+      "flaky": 0,
+      "duracionMs": 12000,
+      "accesibilidad": 100,
+      "rendimiento": 99
+    },
+    {
+      "run": 8999999996,
+      "numero": 43,
+      "fecha": "2026-10-28T09:00:00.000Z",
+      "commit": "f000006",
+      "estado": "ok",
+      "total": 20,
+      "pasaron": 20,
+      "fallaron": 0,
+      "flaky": 0,
+      "duracionMs": 14300,
+      "accesibilidad": 100,
+      "rendimiento": 97
+    },
+    {
+      "run": 8999999997,
+      "numero": 44,
+      "fecha": "2026-10-29T16:00:00.000Z",
+      "commit": "f000007",
+      "estado": "ok",
+      "total": 20,
+      "pasaron": 20,
+      "fallaron": 0,
+      "flaky": 0,
+      "duracionMs": 14900,
+      "accesibilidad": 100,
+      "rendimiento": 98
+    },
+    {
+      "run": 8999999998,
+      "numero": 45,
+      "fecha": "2026-10-30T23:00:00.000Z",
+      "commit": "f000008",
+      "estado": "ok",
+      "total": 20,
+      "pasaron": 20,
+      "fallaron": 0,
+      "flaky": 1,
+      "duracionMs": 18200,
+      "accesibilidad": 100,
+      "rendimiento": 99
+    },
+    {
+      "run": 8999999999,
+      "numero": 46,
+      "fecha": "2026-11-01T06:00:00.000Z",
+      "commit": "f000009",
+      "estado": "ok",
+      "total": 20,
+      "pasaron": 20,
+      "fallaron": 0,
+      "flaky": 0,
+      "duracionMs": 15100,
+      "accesibilidad": 100,
+      "rendimiento": 99
+    },
+    {
+      "run": 9000000000,
+      "numero": 47,
+      "fecha": "2026-11-02T13:00:00.000Z",
+      "commit": "f000010",
+      "estado": "ok",
+      "total": 20,
+      "pasaron": 20,
+      "fallaron": 0,
+      "flaky": 0,
+      "duracionMs": 14700,
+      "accesibilidad": 100,
+      "rendimiento": 98
+    },
+    {
+      "run": 9000000001,
+      "numero": 48,
+      "fecha": "2026-11-03T20:00:00.000Z",
+      "commit": "f000011",
+      "estado": "fallo",
+      "total": 20,
+      "pasaron": 18,
+      "fallaron": 1,
+      "flaky": 1,
+      "duracionMs": 15296,
+      "accesibilidad": 100,
+      "rendimiento": 99
+    }
+  ]
+}

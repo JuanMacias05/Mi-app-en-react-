@@ -28,3 +28,11 @@ test-results/
 playwright-report/
 blob-report/
 .playwright-mcp/
+
+# Panel de calidad (se generan en CI; en local con npm run calidad:local)
+resultados/
+public/calidad.json
+
+# Lighthouse CI
+.lighthouseci/
+lighthouse-report/

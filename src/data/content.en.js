@@ -2,8 +2,8 @@
 
 const en = {
   meta: {
-    title: "Juan Macias — QA Analyst",
-    description: "QA Analyst specializing in test automation, code review and quality reporting with Allure and CI.",
+    title: "Juan Macias — QA Automation Engineer",
+    description: "QA Automation Engineer / SDET: E2E automation with Playwright, CI/CD quality gates and Allure reporting. Also builds Python (FastAPI) and React (Next.js) features.",
   },
 
   ui: {
@@ -20,7 +20,7 @@ const en = {
     themeToDark: "Switch to dark mode",
     menuOpen: "Open menu",
     menuClose: "Close menu",
-    langSwitch: "Ver en español",
+    langSwitch: "ES · Ver en español",
     newTab: "opens in a new tab",
     downloadCv: "Download CV",
     contactCta: "Contact",
@@ -37,7 +37,7 @@ const en = {
     noPublicLinks: "No public links yet",
     pipelineLabel: (n, titles) => `Pipeline flow in ${n} steps: ${titles}.`,
     step: "Step",
-    contactLead: "I'm looking for new opportunities as a QA Analyst. If my profile fits your team, write to me and I'll get back to you soon.",
+    contactLead: "I'm looking for new opportunities as a QA Automation Engineer or SDET. If my profile fits your team, write to me and I'll get back to you soon.",
     form: {
       name: "Name",
       email: "Email",
@@ -59,116 +59,130 @@ const en = {
     linkedinValue: "Let's connect",
     githubValue: "See my code",
     madeWith: "Built with React.",
+    navQuality: "Quality",
+    dashboard: "Quality dashboard",
   },
 
   hero: {
     availability: "Open to new opportunities",
-    role: "QA Analyst · Test Automation",
-    tagline: "Automated tests, clear reports and deployments without surprises.",
+    role: "QA Automation Engineer / SDET",
+    tagline: "Automated tests, CI/CD quality gates and clear reports, so deployments hold no surprises.",
     studies: "Software Development Engineering student.",
-    workMode: "Remote or hybrid",
+    workMode: "Monterrey, Mexico · Remote or hybrid",
   },
 
   summary: [
-    { label: "Current role", value: "QA Analyst at Gencise.ai" },
-    { label: "Focus", value: "QA automation, manual QA and dev support" },
+    { label: "Current role", value: "QA Automation Engineer at Gencise.ai" },
+    { label: "Experience", value: "1.5+ years in software testing" },
+    { label: "Focus", value: "E2E automation, CI/CD and full-stack development" },
     { label: "Education", value: "Software Development Engineering" },
     { label: "Languages", value: "Native Spanish · English B1" },
   ],
 
   experience: [
     {
-      role: "QA Analyst",
+      role: "QA Analyst / QA Automation Engineer",
       company: "Gencise.ai",
-      period: "May 2026 – Present",
+      period: "May 2026 – Present · US insurtech, remote",
       stats: [
-        "162 PRs merged",
-        "107 PRs reviewed",
-        "60 test cases in Xray",
-        "6 products with automated tests"
+        "218 PRs merged across 17 repositories",
+        "200+ PRs reviewed",
+        "Automated tests on 6 products",
+        "Nightly run 36% faster",
       ],
       groups: [
         {
-          title: "QA Automation",
+          title: "Test automation and framework",
           items: [
-            "Built the team's centralized automated test report from scratch, with Allure, published on AWS as a static site.",
-            "Developed custom Allure plugins: run history, overview by product, production report and per-test results with screenshot and console output.",
-            "Expanded automated test coverage to 6 products with Playwright and behave, including per-product regression suites.",
-            "Brought smoke tests to production and demo: they run automatically every time an application is deployed.",
-            "Optimized the nightly run from ~119 to ~76 minutes (≈36% faster), keeping it within its time limit.",
-            "Made the Kubernetes CI pipeline more reliable: retries on infrastructure failures, quarantine for known failures and result publishing even when a run is interrupted.",
-            "Automated result publishing to Xray and Slack notifications that tell new failures apart from repeated ones.",
-            "Designed automatic test classification based on their tags, which organizes the report into 8 suites.",
-            "Defined, together with the team, a status system that separates real application failures from already-known failures."
-          ]
+            "Built and expanded E2E automation for 6 products (Bar & Tavern, Transportation, Property Insurance, Multi-Rater, Broker AI, Admin) with Python, Playwright and Behave (BDD/Gherkin): smoke, regression, rating and premium-math correctness, filters, sorting, pagination and email checks.",
+            "Contributed to the team's next-generation framework (pytest + Playwright): a YAML case registry with validation, production-safe smoke tests (preflight checks, network blocking, kill switch) and approved smoke/sanity cases for staging and production.",
+            "Organized tests into 8 tagged suites, and added a known-failure (quarantine) status so the nightly run reports only real application bugs.",
+          ],
         },
         {
-          title: "Manual QA and code review",
+          title: "CI/CD and infrastructure",
           items: [
-            "Reviewed 107 team pull requests, including those from new team members, catching tests that produced false positives before they reached production.",
-            "Designed 60 test cases in Xray, reported bugs and verified tickets in UAT."
-          ]
+            "Wired tests into GitHub Actions, running in Kubernetes pods (Helm): nightly runs, per-product regression runs, and production and demo smoke tests that start automatically after every deploy.",
+            "Cut nightly run time from about 119 to about 76 minutes (36% faster) by splitting heavy suites across weekdays and running a full regression on Sundays.",
+            "Made the pipeline more reliable: one automatic retry when the failure is infrastructure rather than the app, failing red on dead pods or zero-scenario runs, and publishing results even when a run is interrupted.",
+          ],
         },
         {
-          title: "Development",
+          title: "Reporting and test management",
           items: [
-            "Fixed frontend and backend bugs in the team's applications, such as table sorting with empty values.",
-            "Implemented automatic retries and Slack alerts in a critical workflow, with coordinated changes across 5 repositories.",
-            "Developed an adoption and usage analytics dashboard, on both the backend and the frontend."
-          ]
-        }
-      ]
-    }
+            "Built the team's central test report from scratch with Allure on AWS S3, adding custom plugins: run history, per-product overview, a redacted production report, and per-test results with screenshots.",
+            "Automated publishing of results to Jira Xray (60+ test cases with traceability) and Slack alerts that separate new failures from recurring ones, with links to the exact failed run.",
+            "Built a UAT verification flow that checks a Jira ticket in Staging and attaches the evidence to it.",
+          ],
+        },
+        {
+          title: "Full-stack development",
+          items: [
+            "Shipped features and fixes in the main product: Next.js 16, React, TypeScript and Tailwind on the frontend; Python, FastAPI and PostgreSQL (Alembic migrations) on the backend.",
+            "Built the Problem Reports module end to end: global search, filters, status and assignee fields, a reporter's own report page, and two-way Jira sync with a scheduled job.",
+            "Built an analytics/adoption dashboard (API endpoint plus UI) restricted to admin users.",
+            "Added retries and Slack alerts for failed document-processing (Vision) forwards, and fixed data issues in DOT-number extraction and file-type classification.",
+            "Built a shared, reusable HTML email-layout library (Python package) and moved the emails of 6 services onto it.",
+          ],
+        },
+      ],
+    },
+    {
+      role: "QA Intern",
+      company: "MBQ Group",
+      period: "Jun 2025 – Apr 2026",
+      groups: [
+        {
+          title: "Manual testing",
+          items: [
+            "Ran manual functional and regression tests following internal QA procedures, and documented results and evidence.",
+            "Reported and tracked defects with the development team, and kept the project documentation organized.",
+          ],
+        },
+      ],
+    },
+    {
+      role: "Operations Coordinator",
+      company: "Syl 13 Seguridad Privada",
+      period: "Jan 2025 – Jan 2026",
+      groups: [
+        {
+          title: "Operations and team",
+          items: [
+            "Coordinated staff coverage across assigned zones, plus payroll and operational logistics.",
+            "Led recruiting and training for new staff.",
+          ],
+        },
+      ],
+    },
   ],
 
   about: [
-    "I'm a QA Analyst focused on test automation. My job is to find what slips through: tests that pass when they shouldn't, reports that don't say where something failed, evidence that gets lost along the way.",
-    "I combine automation with manual QA: I design test cases, report bugs and verify in UAT. I also resolve development tickets, so I understand how the things I review are built.",
+    "I'm a QA Automation Engineer with 1.5+ years of software testing experience, manual and automated. My job is to find what slips through: tests that pass when they shouldn't, reports that don't say where something failed, evidence that gets lost along the way.",
+    "I write production code as well as tests: Python (FastAPI) backends and TypeScript/React (Next.js) frontends. Knowing how the things I test are built helps me design better cases and fix what I find. I use AI coding agents to speed up test creation and triage.",
   ],
 
   skillGroups: [
     {
-      title: "QA",
-      skills: [
-        "Playwright",
-        "behave (BDD / Gherkin)",
-        "Allure",
-        "Xray (Jira)",
-        "Manual testing",
-        "Smoke / Sanity / Regression",
-        "Code review"
-      ]
+      title: "Test automation",
+      skills: ["Playwright", "pytest", "Behave (BDD / Gherkin)", "Allure", "API testing (requests, Postman)"],
     },
     {
-      title: "CI / Infrastructure",
-      skills: [
-        "GitHub Actions",
-        "Docker",
-        "Kubernetes",
-        "Helm",
-        "AWS S3",
-        "Linux"
-      ]
+      title: "Test management",
+      skills: ["Jira", "Xray", "Test case design", "Smoke / Sanity / Regression / UAT", "Code review", "Flaky test root-cause analysis"],
+    },
+    {
+      title: "CI/CD and cloud",
+      skills: ["GitHub Actions", "Docker", "Kubernetes", "Helm", "AWS S3", "Terraform (basic)"],
     },
     {
       title: "Development",
-      skills: [
-        "Python",
-        "JavaScript",
-        "SQL",
-        "React",
-        "REST APIs",
-        "HTML / CSS",
-        "Git"
-      ]
+      skills: ["Python", "TypeScript", "JavaScript", "SQL", "Bash", "Next.js", "React", "FastAPI", "PostgreSQL", "Tailwind CSS"],
     },
     {
       title: "Languages",
-      skills: [
-        "Spanish — Native",
-        "English — B1, working toward B2"
-      ]
-    }
+      skills: ["Spanish — Native", "English — B1, used daily in writing"],
+    },
   ],
 
   projects: {
@@ -259,11 +273,15 @@ const en = {
           "Accessibility: semantic HTML, visible focus, labeled form fields and support for the reduced-motion preference.",
           "Contact form powered by EmailJS, with per-field validation and status messages.",
           "End-to-end tests with Playwright on desktop and mobile (contact form, CV download, languages, theme and navigation), run in GitHub Actions on every pull request.",
+          "Automated accessibility audit (WCAG 2.1 AA) with axe in every language and theme, and on mobile.",
+          "Lighthouse CI with minimums for accessibility, best practices and SEO: if a score drops, the pipeline fails.",
+          "A public quality dashboard showing the real results of every CI run, generated by a script with its own unit tests.",
         ],
       },
       result: [
         "A lightweight site, deployed on Vercel, that works well on mobile, tablet and desktop.",
         "All content lives in data files: updating it doesn't require touching the components.",
+        "Quality is visible: anyone can open the dashboard and see which tests ran, how long they took and whether anything failed.",
       ],
     },
   },
@@ -276,6 +294,81 @@ const en = {
       note: null,
     },
   ],
+
+  // Quality dashboard (/calidad).
+  quality: {
+    meta: {
+      title: "Quality dashboard — Juan Macias",
+      description: "Live CI results for Juan Macias's portfolio: E2E tests, accessibility, Lighthouse and run history.",
+    },
+    eyebrow: "Live quality",
+    title: "Quality dashboard",
+    lead: "Real results from this portfolio's pipeline. Every push to main runs lint, unit tests, E2E tests on desktop and mobile, an axe accessibility audit and Lighthouse. This is the latest run, unedited.",
+    back: "Back to portfolio",
+    status: { ok: "Pipeline green", fallo: "Pipeline failing", "sin-datos": "No test results" },
+    localRun: "Local run (outside GitHub Actions)",
+    run: "Run",
+    commit: "Commit",
+    branch: "Branch",
+    generated: "Generated",
+    links: { run: "View in GitHub Actions", e2e: "Playwright report", lighthouse: "Lighthouse report" },
+    kpis: {
+      label: "Latest run summary",
+      tests: "E2E tests",
+      passedOf: (p, t) => `${p} of ${t} passed`,
+      failed: "Failed",
+      failedHint: "still failing after retry",
+      flaky: "Flaky",
+      flakyHint: "passed only on retry",
+      duration: "Suite duration",
+      durationHint: (n) => `${n} devices in parallel`,
+    },
+    lighthouse: {
+      title: "Lighthouse",
+      lead: "Median of 3 runs against the production build. If a category drops below its minimum, the pipeline fails.",
+      categories: { rendimiento: "Performance", accesibilidad: "Accessibility", "buenas-practicas": "Best practices", seo: "SEO" },
+      min: (n) => `min ${n}`,
+      warnOnly: "warning only",
+      below: "below minimum",
+      empty: "This run has no Lighthouse results.",
+    },
+    pipeline: {
+      title: "Pipeline",
+      lead: "How long each GitHub Actions job took and when it started. Tests and Lighthouse run in parallel.",
+      total: "Total",
+      steps: (n) => `Show ${n} steps`,
+      empty: "The timeline appears when the dashboard is generated in GitHub Actions.",
+      startsAt: (s) => `starts at ${s}`,
+    },
+    tests: {
+      title: "Results by test",
+      filterLabel: "Filter tests",
+      filters: { todas: "All", fallo: "Failed", flaky: "Flaky" },
+      search: "Search tests",
+      searchPlaceholder: "e.g. form, mobile, WCAG…",
+      columns: { test: "Test", device: "Device", status: "Status", duration: "Duration" },
+      projects: { escritorio: "Desktop", movil: "Mobile" },
+      states: { paso: "Passed", fallo: "Failed", flaky: "Flaky", omitida: "Skipped" },
+      attempts: (n) => `${n} attempts`,
+      openReport: "Open in report",
+      showing: (n, t) => `Showing ${n} of ${t} tests`,
+      empty: "No tests match the filter.",
+    },
+    history: {
+      title: "History",
+      lead: (n) => `Last ${n} runs on main. Bar height is the E2E suite duration.`,
+      chartLabel: "Suite duration per run",
+      single: "There is only one run so far; the history grows with every push to main.",
+      tableToggle: "View as table",
+      columns: { run: "Run", date: "Date", status: "Status", tests: "Tests", flaky: "Flaky", duration: "Duration", a11y: "A11y" },
+      states: { ok: "Green", fallo: "Failed", "sin-datos": "No data" },
+    },
+    loading: "Loading CI results…",
+    error: "Couldn't load the CI results.",
+    errorHint: "The pipeline may not have published yet. You can also see the runs directly in GitHub Actions.",
+    retry: "Retry",
+    actionsLink: "Open GitHub Actions",
+  },
 }
 
 export default en

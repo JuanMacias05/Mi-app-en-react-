@@ -5,14 +5,20 @@ on:
     branches: [main]
   pull_request:
 
+permissions:
+  contents: read
+
 jobs:
   playwright:
+    name: Lint, unitarias y E2E
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v4
+      - name: Descargar código
+        uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
+      - name: Configurar Node
+        uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: npm
@@ -23,11 +29,19 @@ jobs:
       - name: Lint
         run: npm run lint
 
+      - name: Pruebas unitarias
+        run: npm run test:unit
+
       - name: Instalar Chromium
         run: npx playwright install --with-deps chromium
 
-      - name: Correr pruebas
+      - name: Correr pruebas E2E
         run: npm test
+        # Valores ficticios: las pruebas interceptan la API de EmailJS y nunca envían correos reales.
+        env:
+          VITE_EMAILJS_SERVICE_ID: service_test
+          VITE_EMAILJS_TEMPLATE_ID: template_test
+          VITE_EMAILJS_PUBLIC_KEY: public_key_test
 
       - name: Guardar reporte
         if: ${{ !cancelled() }}
@@ -36,3 +50,116 @@ jobs:
           name: playwright-report
           path: playwright-report/
           retention-days: 14
+
+      # Resultados en JSON para el panel de calidad.
+      - name: Guardar resultados
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: resultados-playwright
+          path: resultados/playwright.json
+          retention-days: 14
+
+  lighthouse:
+    name: Lighthouse
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Descargar código
+        uses: actions/checkout@v4
+
+      - name: Configurar Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Auditar con Lighthouse
+        run: npm run lighthouse
+
+      # Deja la corrida representativa como index.html para publicarla.
+      - name: Preparar reporte
+        if: ${{ !cancelled() }}
+        run: cp "$(jq -r '.[] | select(.isRepresentativeRun) | .htmlPath' lighthouse-report/manifest.json)" lighthouse-report/index.html
+
+      - name: Guardar reporte
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-report
+          path: lighthouse-report/
+          retention-days: 14
+
+  # Publica los reportes y el resumen del panel de calidad en GitHub Pages, solo desde main.
+  # También publica si algo falló: el panel debe mostrar los fallos, no esconderlos.
+  publicar-reportes:
+    name: Publicar reportes
+    if: ${{ github.event_name == 'push' && !cancelled() }}
+    needs: [playwright, lighthouse]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: read
+      pages: write
+      id-token: write
+    env:
+      REPORTES_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - name: Descargar código
+        uses: actions/checkout@v4
+
+      - name: Configurar Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # Si un job falló antes de generar su reporte, el artefacto no existe y esa sección del panel sale vacía.
+      - uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          name: playwright-report
+          path: sitio/e2e
+
+      - uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          name: lighthouse-report
+          path: sitio/lighthouse
+
+      - uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          name: resultados-playwright
+          path: resultados
+
+      - name: Leer historial y tiempos de los jobs
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          curl -fsSL "${REPORTES_URL}calidad.json" -o anterior.json || echo "Sin historial previo"
+          gh api "repos/${{ github.repository }}/actions/runs/${{ github.run_id }}/jobs" > jobs.json
+
+      - name: Generar resumen del panel de calidad
+        run: >
+          node scripts/resumen-calidad.mjs
+          --lighthouse sitio/lighthouse/manifest.json
+          --jobs jobs.json
+          --anterior anterior.json
+          --reportes "$REPORTES_URL"
+          --salida sitio/calidad.json
+
+      - name: Agregar portada
+        run: cp .github/reportes/index.html sitio/
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: sitio
+
+      - id: deploy
+        uses: actions/deploy-pages@v4

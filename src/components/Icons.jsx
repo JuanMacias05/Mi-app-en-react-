@@ -81,3 +81,35 @@ export function CheckIcon(props) {
     </svg>
   )
 }
+
+export function ChartIcon(props) {
+  return (
+    <svg {...base} width={16} height={16} fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+      <path d="M4 20V10M10 20V4M16 20v-7M22 20H2" />
+    </svg>
+  )
+}
+
+export function XIcon(props) {
+  return (
+    <svg {...base} width={16} height={16} fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+      <path d="M18 6 6 18M6 6l12 12" />
+    </svg>
+  )
+}
+
+export function RetryIcon(props) {
+  return (
+    <svg {...base} width={16} height={16} fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+      <path d="M3 12a9 9 0 0 1 15.5-6.2L21 8M21 3v5h-5M21 12a9 9 0 0 1-15.5 6.2L3 16M3 21v-5h5" />
+    </svg>
+  )
+}
+
+export function MinusIcon(props) {
+  return (
+    <svg {...base} width={16} height={16} fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" {...props}>
+      <path d="M5 12h14" />
+    </svg>
+  )
+}

@@ -6,10 +6,11 @@ import { GitHubIcon, LinkedInIcon, MailIcon } from "./Icons"
 import SectionHeader from "./SectionHeader"
 
 // Los nombres de los campos (nombre, email, mensaje) deben coincidir con la plantilla de EmailJS.
+// Los valores vienen de .env.local (local) y de las variables de entorno de Vercel (producción).
 const EMAILJS = {
-  service: "service_dxmvioc",
-  template: "template_40eclkc",
-  publicKey: "ZUQ8dK-sL2cC2z8Gz",
+  service: import.meta.env.VITE_EMAILJS_SERVICE_ID,
+  template: import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+  publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
 }
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
