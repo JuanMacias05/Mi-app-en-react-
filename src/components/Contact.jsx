@@ -100,7 +100,7 @@ export default function Contact() {
 
   return (
     <section id="contacto" className="section" aria-labelledby="contacto-title">
-      <SectionHeader id="contacto-title" title={ui.nav.contacto}>
+      <SectionHeader id="contacto-title" number="05" title={ui.nav.contacto}>
         {ui.contactLead}
       </SectionHeader>
 

@@ -25,6 +25,9 @@ const en = {
     downloadCv: "Download CV",
     contactCta: "Contact",
     summary: "Summary",
+    ciLast: "Latest CI run:",
+    ciTests: "E2E tests",
+    ciLink: "See the quality dashboard",
     skills: "Skills",
     projectsLead: "Case studies: the problem, how I solved it and what it achieved.",
     caseStudy: { problem: "Problem", solution: "Solution", howItWorks: "How it works", result: "Result" },
@@ -85,10 +88,10 @@ const en = {
       company: "Gencise.ai",
       period: "May 2026 – Present · US insurtech, remote",
       stats: [
-        "218 PRs merged across 17 repositories",
-        "200+ PRs reviewed",
-        "Automated tests on 6 products",
-        "Nightly run 36% faster",
+        { value: "218", label: "PRs merged across 17 repositories" },
+        { value: "200+", label: "PRs reviewed" },
+        { value: "6", label: "products with automated tests" },
+        { value: "36%", label: "faster nightly run" },
       ],
       groups: [
         {
@@ -181,7 +184,7 @@ const en = {
     },
     {
       title: "Languages",
-      skills: ["Spanish — Native", "English — B1, used daily in writing"],
+      skills: ["Spanish — Native", "English — B1, used daily in meetings and in writing"],
     },
   ],
 

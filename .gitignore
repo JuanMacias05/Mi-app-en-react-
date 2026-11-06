@@ -36,3 +36,6 @@ public/calidad.json
 # Lighthouse CI
 .lighthouseci/
 lighthouse-report/
+
+# Bocetos del brainstorming
+.superpowers/

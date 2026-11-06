@@ -6,7 +6,7 @@ export default function About() {
 
   return (
     <section id="sobre-mi" className="section" aria-labelledby="sobre-mi-title">
-      <SectionHeader id="sobre-mi-title" title={t.ui.nav["sobre-mi"]} />
+      <SectionHeader id="sobre-mi-title" number="02" title={t.ui.nav["sobre-mi"]} />
 
       <div className="about-grid">
         <div className="about-text">
