@@ -1161,7 +1161,6 @@ textarea {
   font-size: clamp(2rem, 4vw, 2.75rem);
 }
 
-.quality-loading,
 .quality-empty {
   color: var(--text-subtle);
 }
@@ -1871,5 +1870,91 @@ textarea {
 
   .tests-file th {
     padding: 16px 0 4px;
+  }
+}
+
+/* Esqueleto de carga del panel */
+.quality-skeleton-blocks {
+  display: grid;
+  gap: 24px;
+}
+
+.sk {
+  display: block;
+  max-width: 100%;
+  border-radius: 4px;
+  background: var(--border);
+}
+
+.sk-pill {
+  border-radius: 999px;
+}
+
+.sk-card,
+.sk-header,
+.sk-row {
+  display: grid;
+  gap: 12px;
+}
+
+.sk-row {
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.sk-inline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.sk-table-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+/* Brillo que recorre los bloques; sin animación si la persona pidió reducir movimiento. */
+@media (prefers-reduced-motion: no-preference) {
+  .sk {
+    background: linear-gradient(90deg, var(--border) 25%, var(--border-strong) 50%, var(--border) 75%);
+    background-size: 200% 100%;
+    animation: sk-shimmer 1.4s ease-in-out infinite;
+  }
+}
+
+@keyframes sk-shimmer {
+  from {
+    background-position: 100% 0;
+  }
+  to {
+    background-position: -100% 0;
+  }
+}
+
+/* Skeleton de la carga inicial (index.html) */
+.boot-nav {
+  position: fixed;
+  inset: 0 0 auto;
+  height: var(--nav-height);
+  border-bottom: 1px solid var(--border);
+}
+
+.boot-nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.boot-summary {
+  padding: 24px;
+}
+
+@media (max-width: 860px) {
+  .boot-nav-links {
+    display: none;
   }
 }

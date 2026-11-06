@@ -7,6 +7,7 @@ import Footer from "./components/Footer"
 import Hero from "./components/Hero"
 import Navbar from "./components/Navbar"
 import Projects from "./components/Projects"
+import QualitySkeleton from "./quality/QualitySkeleton"
 import { useTheme } from "./hooks/useTheme"
 import { useLanguage } from "./i18n/language"
 
@@ -24,7 +25,7 @@ function App({ page = "inicio" }) {
       <Navbar theme={theme} onToggleTheme={toggleTheme} page={page} />
       <main id="contenido" className="container">
         {isQuality ? (
-          <Suspense fallback={<p className="quality-loading" role="status">{t.quality.loading}</p>}>
+          <Suspense fallback={<div className="quality"><QualitySkeleton withHeader /></div>}>
             <QualityPage />
           </Suspense>
         ) : (

@@ -98,6 +98,27 @@ test.describe("Panel de calidad", () => {
   })
 })
 
+test.describe("Panel de calidad mientras carga", () => {
+  test("muestra el esqueleto y lo reemplaza por los datos", async ({ page }) => {
+    let responder
+    const respuesta = new Promise((resolve) => (responder = resolve))
+    await page.route(CALIDAD_JSON, async (route) => {
+      await respuesta
+      await route.fulfill({ body: fixture, contentType: "application/json" })
+    })
+
+    await page.goto("/calidad")
+    const cargando = page.getByRole("status").filter({ hasText: "Cargando resultados del CI…" })
+    await expect(cargando).toBeVisible()
+    await expect(cargando).toHaveAttribute("aria-busy", "true")
+    await expectNoViolations(page)
+
+    responder()
+    await expect(page.getByRole("region", { name: "Pipeline con fallos" })).toBeVisible()
+    await expect(cargando).toHaveCount(0)
+  })
+})
+
 test.describe("Panel de calidad sin datos", () => {
   test("avisa si no puede cargar los resultados y se recupera al reintentar", async ({ page }) => {
     let intentos = 0

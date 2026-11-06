@@ -6,6 +6,7 @@ import { useLanguage } from "../i18n/language"
 import { formatDate, formatDuration, formatRelative } from "./format"
 import LighthousePanel from "./LighthousePanel"
 import PipelineTimeline from "./PipelineTimeline"
+import QualitySkeleton from "./QualitySkeleton"
 import RunHistory from "./RunHistory"
 import StatusBadge from "./StatusBadge"
 import TestResults from "./TestResults"
@@ -142,11 +143,7 @@ export default function QualityPage() {
         <p className="section-lead">{q.lead}</p>
       </header>
 
-      {status === "loading" && (
-        <p className="quality-loading" role="status">
-          {q.loading}
-        </p>
-      )}
+      {status === "loading" && <QualitySkeleton />}
 
       {status === "error" && (
         <div className="quality-error card" role="alert">
