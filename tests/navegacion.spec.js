@@ -25,9 +25,9 @@ test.describe("Navegación", () => {
   test("muestra la información clave en el hero", async ({ page }) => {
     await page.goto("/")
     await expect(page.getByRole("heading", { level: 1, name: "Juan Macias" })).toBeVisible()
-    await expect(page.getByText("QA Analyst · Test Automation", { exact: true })).toBeVisible()
+    await expect(page.getByText("QA Automation Engineer / SDET", { exact: true })).toBeVisible()
     await expect(page.getByText("Disponible para nuevas oportunidades")).toBeVisible()
-    await expect(page).toHaveTitle("Juan Macias — QA Analyst")
+    await expect(page).toHaveTitle("Juan Macias — QA Automation Engineer")
   })
 })
 

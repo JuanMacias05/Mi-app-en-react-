@@ -1,5 +1,5 @@
 import { useLanguage } from "../i18n/language"
-import { ArrowUpRightIcon, CheckIcon, CodeIcon } from "./Icons"
+import { ArrowUpRightIcon, ChartIcon, CheckIcon, CodeIcon } from "./Icons"
 import PipelineDiagram from "./PipelineDiagram"
 
 function HowItWorks({ steps, paragraphs }) {
@@ -37,8 +37,8 @@ function RichText({ value }) {
 export default function ProjectCard({ project }) {
   const { t } = useLanguage()
   const { ui } = t
-  const { title, subtitle, context, problem, solution, howItWorks, result, tags, demo, code, tests, internal } = project
-  const hasLinks = demo || code || tests
+  const { title, subtitle, context, problem, solution, howItWorks, result, tags, demo, code, tests, dashboard, internal } = project
+  const hasLinks = demo || code || tests || dashboard
   const linkHint = `${ui.of} ${title} (${ui.newTab})`
 
   const blocks = [
@@ -88,6 +88,11 @@ export default function ProjectCard({ project }) {
               <a href={tests} target="_blank" rel="noopener noreferrer" className="text-link">
                 {ui.tests} <CheckIcon />
                 <span className="sr-only">{linkHint}</span>
+              </a>
+            )}
+            {dashboard && (
+              <a href={dashboard} className="text-link">
+                {ui.dashboard} <ChartIcon />
               </a>
             )}
           </>

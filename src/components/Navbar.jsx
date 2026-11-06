@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react"
-import { profile, sectionIds } from "../data/profile"
+import { profile, QUALITY_PATH, sectionIds } from "../data/profile"
 import { useActiveSection } from "../hooks/useActiveSection"
 import { useLanguage } from "../i18n/language"
 import { MoonIcon, SunIcon } from "./Icons"
 
-export default function Navbar({ theme, onToggleTheme }) {
+export default function Navbar({ theme, onToggleTheme, page = "inicio" }) {
   const [open, setOpen] = useState(false)
-  const active = useActiveSection(sectionIds)
+  const isHome = page === "inicio"
+  // Fuera del portafolio las anclas apuntan a la página principal.
+  const home = isHome ? "" : "/"
+  const active = useActiveSection(isHome ? sectionIds : [])
   const { lang, toggleLang, t } = useLanguage()
 
   // Cierra el menú móvil con Escape.
@@ -23,7 +26,7 @@ export default function Navbar({ theme, onToggleTheme }) {
   return (
     <header className={`navbar ${open ? "is-open" : ""}`}>
       <nav className="container navbar-inner" aria-label={t.ui.mainNav}>
-        <a href="#inicio" className="logo" onClick={() => setOpen(false)}>
+        <a href={`${home}#inicio`} className="logo" onClick={() => setOpen(false)}>
           <span className="logo-mark" aria-hidden="true">JM</span>
           {profile.name}
         </a>
@@ -32,7 +35,7 @@ export default function Navbar({ theme, onToggleTheme }) {
           {sectionIds.map((id) => (
             <li key={id}>
               <a
-                href={`#${id}`}
+                href={`${home}#${id}`}
                 aria-current={active === id ? "true" : undefined}
                 onClick={() => setOpen(false)}
               >
@@ -40,6 +43,16 @@ export default function Navbar({ theme, onToggleTheme }) {
               </a>
             </li>
           ))}
+          <li>
+            <a
+              href={QUALITY_PATH}
+              className="nav-quality"
+              aria-current={page === "calidad" ? "page" : undefined}
+              onClick={() => setOpen(false)}
+            >
+              {t.ui.navQuality}
+            </a>
+          </li>
         </ul>
 
         <div className="nav-actions">

@@ -10,7 +10,10 @@
     "preview": "vite preview",
     "test": "playwright test",
     "test:ui": "playwright test --ui",
-    "test:report": "playwright show-report"
+    "test:report": "playwright show-report",
+    "test:unit": "node --test \"scripts/**/*.test.mjs\"",
+    "calidad:local": "node scripts/resumen-calidad.mjs --salida public/calidad.json",
+    "lighthouse": "npm run build && lhci autorun"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
@@ -18,7 +21,9 @@
     "react-dom": "^19.2.0"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
     "@eslint/js": "^9.39.1",
+    "@lhci/cli": "^0.15.1",
     "@playwright/test": "^1.63.0",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
