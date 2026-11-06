@@ -8,6 +8,7 @@ import Hero from "./components/Hero"
 import Navbar from "./components/Navbar"
 import Projects from "./components/Projects"
 import QualitySkeleton from "./quality/QualitySkeleton"
+import { useReveal } from "./hooks/useReveal"
 import { useTheme } from "./hooks/useTheme"
 import { useLanguage } from "./i18n/language"
 
@@ -18,6 +19,7 @@ function App({ page = "inicio" }) {
   const { theme, toggleTheme } = useTheme()
   const { t } = useLanguage()
   const isQuality = page === "calidad"
+  useReveal(!isQuality)
 
   return (
     <>

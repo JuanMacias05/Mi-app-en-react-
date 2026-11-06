@@ -25,6 +25,9 @@ const es = {
     downloadCv: "Descargar CV",
     contactCta: "Contacto",
     summary: "Resumen",
+    ciLast: "Última corrida del CI:",
+    ciTests: "pruebas E2E",
+    ciLink: "Ver el panel de calidad",
     skills: "Habilidades",
     projectsLead: "Casos de estudio: el problema, cómo lo resolví y qué se logró.",
     caseStudy: { problem: "Problema", solution: "Solución", howItWorks: "Cómo funciona", result: "Resultado" },
@@ -85,10 +88,10 @@ const es = {
       company: "Gencise.ai",
       period: "Mayo 2026 – Actualidad · insurtech de EE. UU., remoto",
       stats: [
-        "218 PRs integrados en 17 repositorios",
-        "Más de 200 PRs revisados",
-        "6 productos con pruebas automatizadas",
-        "Corrida nocturna 36% más rápida",
+        { value: "218", label: "PRs integrados en 17 repositorios" },
+        { value: "200+", label: "PRs revisados" },
+        { value: "6", label: "productos con pruebas automatizadas" },
+        { value: "36%", label: "más rápida la corrida nocturna" },
       ],
       groups: [
         {
@@ -181,7 +184,7 @@ const es = {
     },
     {
       title: "Idiomas",
-      skills: ["Español — Nativo", "Inglés — B1, uso diario por escrito"],
+      skills: ["Español — Nativo", "Inglés — B1, uso diario en reuniones y por escrito"],
     },
   ],
 

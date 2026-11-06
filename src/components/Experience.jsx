@@ -6,7 +6,7 @@ export default function Experience() {
 
   return (
     <section id="experiencia" className="section" aria-labelledby="experiencia-title">
-      <SectionHeader id="experiencia-title" title={t.ui.nav.experiencia} />
+      <SectionHeader id="experiencia-title" number="01" title={t.ui.nav.experiencia} />
 
       <ol className="timeline">
         {t.experience.map((job) => (
@@ -20,7 +20,10 @@ export default function Experience() {
             {job.stats && (
               <ul className="job-stats">
                 {job.stats.map((stat) => (
-                  <li key={stat}>{stat}</li>
+                  <li key={stat.label}>
+                    <strong>{stat.value}</strong>
+                    <span>{stat.label}</span>
+                  </li>
                 ))}
               </ul>
             )}

@@ -8,7 +8,7 @@ export default function Projects() {
 
   return (
     <section id="proyectos" className="section" aria-labelledby="proyectos-title">
-      <SectionHeader id="proyectos-title" title={t.ui.nav.proyectos}>
+      <SectionHeader id="proyectos-title" number="03" title={t.ui.nav.proyectos}>
         {t.ui.projectsLead}
       </SectionHeader>
 

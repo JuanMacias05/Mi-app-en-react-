@@ -6,7 +6,7 @@ export default function Education() {
 
   return (
     <section id="educacion" className="section" aria-labelledby="educacion-title">
-      <SectionHeader id="educacion-title" title={t.ui.nav.educacion} />
+      <SectionHeader id="educacion-title" number="04" title={t.ui.nav.educacion} />
 
       <ol className="timeline">
         {t.education.map((item) => (
