@@ -162,7 +162,7 @@ const en = {
 
   about: [
     "I'm a QA Automation Engineer with 1.5+ years of software testing experience, manual and automated. My job is to find what slips through: tests that pass when they shouldn't, reports that don't say where something failed, evidence that gets lost along the way.",
-    "I write production code as well as tests: Python (FastAPI) backends and TypeScript/React (Next.js) frontends. Knowing how the things I test are built helps me design better cases and fix what I find. I use AI coding agents to speed up test creation and triage.",
+    "I write production code as well as tests: Python (FastAPI) backends and TypeScript/React (Next.js) frontends. Knowing how the things I test are built helps me design better cases and fix what I find. I use AI coding agents (Claude Code and Codex) to design test cases, write automation and triage failures.",
   ],
 
   skillGroups: [
@@ -181,6 +181,10 @@ const en = {
     {
       title: "Development",
       skills: ["Python", "TypeScript", "JavaScript", "SQL", "Bash", "Next.js", "React", "FastAPI", "PostgreSQL", "Tailwind CSS"],
+    },
+    {
+      title: "AI for QA and development",
+      skills: ["Claude Code", "Codex", "AI-assisted test case design", "AI-assisted test automation"],
     },
     {
       title: "Languages",

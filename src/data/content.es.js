@@ -162,7 +162,7 @@ const es = {
 
   about: [
     "Soy QA Automation Engineer con más de 1.5 años en pruebas de software, manuales y automatizadas. Mi trabajo es encontrar lo que se escapa: pruebas que pasan cuando no deberían, reportes que no dicen dónde falló algo y evidencia que se pierde en el camino.",
-    "Además de pruebas, escribo código de producción: backends en Python (FastAPI) y frontends en TypeScript y React (Next.js). Entender cómo se construye lo que pruebo me ayuda a diseñar mejores casos y a corregir lo que encuentro. Uso agentes de IA para acelerar la creación y el análisis de pruebas.",
+    "Además de pruebas, escribo código de producción: backends en Python (FastAPI) y frontends en TypeScript y React (Next.js). Entender cómo se construye lo que pruebo me ayuda a diseñar mejores casos y a corregir lo que encuentro. Uso agentes de IA (Claude Code y Codex) para diseñar casos de prueba, escribir la automatización y analizar fallos.",
   ],
 
   skillGroups: [
@@ -181,6 +181,10 @@ const es = {
     {
       title: "Desarrollo",
       skills: ["Python", "TypeScript", "JavaScript", "SQL", "Bash", "Next.js", "React", "FastAPI", "PostgreSQL", "Tailwind CSS"],
+    },
+    {
+      title: "IA aplicada a QA y desarrollo",
+      skills: ["Claude Code", "Codex", "Diseño de casos de prueba con IA", "Automatización asistida por IA"],
     },
     {
       title: "Idiomas",
